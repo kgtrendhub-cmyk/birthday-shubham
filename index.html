@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday Shubham 🎉</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        }
+
+        .container {
+            margin-top: 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 50px;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        p {
+            font-size: 22px;
+            width: 70%;
+            margin: auto;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            background-color: white;
+            color: #ff4e50;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #ffe6e6;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px white; }
+            to { text-shadow: 0 0 25px yellow; }
+        }
+
+        /* Balloons */
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 60px;
+            height: 80px;
+            background: red;
+            border-radius: 50%;
+            animation: float 10s infinite;
+        }
+
+        .balloon:before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background: white;
+            top: 80px;
+            left: 29px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-120vh); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid" type="audio/midi">
+    </audio>
+
+    <div class="container">
+        <h1>🎉 Happy Birthday Shubham 🎉</h1>
+        <p>
+            Wishing you unlimited success, happiness, and achievements in life.
+            Keep shining and keep smiling always! 🔥✨
+        </p>
+
+        <button onclick="celebrate()">Click for Surprise 🎁</button>
+
+        <p id="surprise" style="display:none; margin-top:20px; font-size:24px;">
+            Have an amazing year ahead! 🚀🎂
+        </p>
+    </div>
+
+    <!-- Balloons -->
+    <div class="balloon" style="left:10%; background:#ff4e50; animation-duration:8s;"></div>
+    <div class="balloon" style="left:30%; background:#f9d423; animation-duration:10s;"></div>
+    <div class="balloon" style="left:50%; background:#24c6dc; animation-duration:12s;"></div>
+    <div class="balloon" style="left:70%; background:#ab47bc; animation-duration:9s;"></div>
+    <div class="balloon" style="left:90%; background:#66bb6a; animation-duration:11s;"></div>
+
+    <script>
+        function celebrate() {
+            document.getElementById("surprise").style.display = "block";
+
+            confetti({
+                particleCount: 200,
+                spread: 100,
+                origin: { y: 0.6 }
+            });
+        }
+    </script>
+
+</body>
+</html>
